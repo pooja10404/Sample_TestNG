@@ -33,20 +33,6 @@ public class alertEnterTextFunctionality {
             }catch(Exception e){}
         }
 
-
-
-    public void waitForPageLoad() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(new Function<WebDriver, Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                System.out.println("Current Window State       : "
-                        + String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState")));
-                return String
-                        .valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"))
-                        .equals("complete");
-            }
-        });
-    }
     @AfterClass
     public void tearDown() {
         driver.close();
