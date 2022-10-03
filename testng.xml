@@ -4,9 +4,10 @@
     <test verbose="2" preserve-order="true" name="C:/Users/Pooja/Demo_TestNG_Project">
         <classes>
             <class name="sendKeysFunctionality"></class>
-            <class name="alertFunctionality"></class>
+            <class name="alertGetTextFunctionality"></class>
             <class name="sendKeysThroughJavaScriptFunctionality"></class>
             <class name="simpleClickFunctionality"></class>
+            <class name="alertAcceptFunctionality"></class>
         </classes>
     </test>
 </suite>
