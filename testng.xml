@@ -3,7 +3,10 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/Pooja/Demo_TestNG_Project">
         <classes>
-            <class name="Send_Keys_Functionality"></class>
+            <class name="sendKeysFunctionality"></class>
+            <class name="alertFunctionality"></class>
+            <class name="sendKeysThroughJavaScriptFunctionality"></class>
+            <class name="simpleClickFunctionality"></class>
         </classes>
     </test>
 </suite>

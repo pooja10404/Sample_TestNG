@@ -3,6 +3,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -11,7 +12,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.function.Function;
 
-public class sendKeysFunctionality {
+public class simpleClickFunctionality {
 
     WebDriver driver;
     //Method to set up the browser and open the website
@@ -36,7 +37,9 @@ public class sendKeysFunctionality {
             //Get the Web Element corresponding Login button and click it
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
             loginButton.click();
-//            Thread.sleep(3000);
+            WebElement addEmployeeOption = driver.findElement(By.cssSelector("li:nth-child(3) a.oxd-topbar-body-nav-tab-item"));
+            addEmployeeOption.click();
+            Thread.sleep(3000);
         }catch(Exception e){}
     }
 
