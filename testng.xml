@@ -10,6 +10,7 @@
             <class name="alertAcceptFunctionality"></class>
             <class name="alertDismissFunctionality"></class>
             <class name="alertEnterTextFunctionality"></class>
+            <class name="Simple_Clicks"></class>
         </classes>
     </test>
 </suite>
