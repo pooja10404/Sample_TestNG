@@ -14,7 +14,7 @@ public class alertDismissFunctionality {
     //Method to set up the browser and open the website
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C://Users//Pooja//jar files//chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C://Users//Pooja//Demo_TestNG_Project//tools//chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://demoqa.com/alerts");
         driver.manage().window().maximize();
