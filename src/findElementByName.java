@@ -1,17 +1,13 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.function.Function;
 
-
-public class Simple_Clicks {
+public class findElementByName {
     WebDriver driver;
     //Method to set up the browser and open the website
     @BeforeClass
@@ -22,19 +18,18 @@ public class Simple_Clicks {
         driver.manage().window().maximize();
     }
     @Test(priority = 2)
-    public void click() {
+    public void find_Element_ByName() {
         try {
             //Get the Web Element corresponding to the field Email (Text field) and use sendkeys to pass the email to the field
             System.out.println("Starting the test case");
-            driver.findElement(By.cssSelector("input[name='username']")).sendKeys("Admin");
-            //Get the Web Element corresponding to the Password Field
-            WebElement passWordField = driver.findElement(By.cssSelector("input[name='password']"));
+            // identify element with find element by name
+            driver.findElement(By.name("username")).sendKeys("Admin");
+            // identify element with find element by name
+            WebElement passWordField = driver.findElement(By.name("password"));
             passWordField.sendKeys("admin123");
             //Get the Web Element corresponding Login button and click it
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
             loginButton.click();
-            WebElement menu_item= driver.findElement(By.linkText("Admin"));
-            menu_item.click();
         }catch(Exception e){}
     }
 

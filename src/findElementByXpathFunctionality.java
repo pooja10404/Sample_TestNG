@@ -3,7 +3,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -12,7 +11,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.function.Function;
 
-public class simpleClickFunctionality {
+public class findElementByXpathFunctionality {
 
     WebDriver driver;
     //Method to set up the browser and open the website
@@ -24,20 +23,18 @@ public class simpleClickFunctionality {
         driver.manage().window().maximize();
     }
     @Test(priority = 1)
-    public void Send_Key() {
+    public void findElement_ByXpath_Functionality() {
         try {
             waitForPageLoad();
-            //Get the Web Element corresponding to the field Email (Text field) and use sendkeys to pass the email to the field
             System.out.println("Starting the test case");
-            driver.findElement(By.cssSelector("input[name='username']")).sendKeys("Admin");
-            //Get the Web Element corresponding to the Password Field
-            WebElement passWordField = driver.findElement(By.cssSelector("input[name='password']"));
+            // identify element with xpath
+            driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");
+            // identify element with xpath
+            WebElement passWordField = driver.findElement(By.xpath("//input[@name='password']"));
             passWordField.sendKeys("admin123");
-            //Get the Web Element corresponding Login button and click it
-            WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+            // identify element with xpath
+            WebElement loginButton = driver.findElement(By.cssSelector("//button[@type='submit']"));
             loginButton.click();
-            WebElement addEmployeeOption = driver.findElement(By.cssSelector("li:nth-child(3) a.oxd-topbar-body-nav-tab-item"));
-            addEmployeeOption.click();
         }catch(Exception e){}
     }
 
