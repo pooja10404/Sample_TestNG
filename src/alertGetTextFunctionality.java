@@ -29,27 +29,13 @@ public class alertGetTextFunctionality {
             System.out.println("Starting the test case");
             WebElement clickMeButton = driver.findElement(By.id("alertButton"));
             clickMeButton.click();
-            driver.switchTo().alert();
+           // Switching to Alert and capture the alert message.
             String msg = driver.switchTo().alert().getText();
             System.out.println("msg===="+msg);
             Assert.assertEquals("You clicked a button", msg);
             }catch(Exception e){}
         }
 
-
-
-    public void waitForPageLoad() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(new Function<WebDriver, Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                System.out.println("Current Window State       : "
-                        + String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState")));
-                return String
-                        .valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"))
-                        .equals("complete");
-            }
-        });
-    }
     @AfterClass
     public void tearDown() {
         driver.close();

@@ -29,6 +29,7 @@ public class alertEnterTextFunctionality {
             System.out.println("Starting the test case");
             WebElement clickMeButton = driver.findElement(By.id("promtButton"));
             clickMeButton.click();
+            //Switching to Alert and send data to alert box.
             driver.switchTo().alert().sendKeys("TestUser");
             }catch(Exception e){}
         }

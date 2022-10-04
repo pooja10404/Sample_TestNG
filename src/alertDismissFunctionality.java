@@ -25,26 +25,13 @@ public class alertDismissFunctionality {
             System.out.println("Starting the test case");
             WebElement clickMeButton = driver.findElement(By.id("confirmButton"));
             clickMeButton.click();
+           // Switching to Alert
             driver.switchTo().alert();
+           // To click on the ‘Cancel’ button of the alert. (Dismiss the alert)
             driver.switchTo().alert().dismiss();
-//            driver.switchTo().defaultContent();
             }catch(UnhandledAlertException e){e.getAlert();}
         }
 
-
-
-    public void waitForPageLoad() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(new Function<WebDriver, Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                System.out.println("Current Window State       : "
-                        + String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState")));
-                return String
-                        .valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"))
-                        .equals("complete");
-            }
-        });
-    }
     @AfterClass
     public void tearDown() {
         driver.close();

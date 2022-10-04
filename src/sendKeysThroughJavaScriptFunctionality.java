@@ -26,19 +26,17 @@ public class sendKeysThroughJavaScriptFunctionality {
     public void Send_Key_Java_Script() {
         try {
             waitForPageLoad();
-            Thread.sleep(3000);
             //Get the Web Element corresponding to the field Email (Text field) and use sendkeys through JavascriptExecutor to pass the email to the field
             System.out.println("Starting the test case");
             JavascriptExecutor jse = ((JavascriptExecutor)driver);
             WebElement email =  driver.findElement(By.cssSelector("input[name='username']"));
             jse.executeScript("arguments[0].value='Admin';", email);
-            //Get the Web Element corresponding to the Password Field
+            //Get the Web Element corresponding to the Password Field and send the data through javascript
             WebElement passWordField = driver.findElement(By.cssSelector("input[name='password']"));
             jse.executeScript("arguments[0].value='admin123';", passWordField);
             //Get the Web Element corresponding Login button and click it
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
             loginButton.click();
-//            Thread.sleep(3000);
         }catch(Exception e){}
     }
 
