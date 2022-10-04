@@ -8,6 +8,8 @@
             <class name="sendKeysThroughJavaScriptFunctionality"></class>
             <class name="simpleClickFunctionality"></class>
             <class name="alertAcceptFunctionality"></class>
+            <class name="alertDismissFunctionality"></class>
+            <class name="alertEnterTextFunctionality"></class>
         </classes>
     </test>
 </suite>

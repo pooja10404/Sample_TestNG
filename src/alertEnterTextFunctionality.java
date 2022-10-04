@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.function.Function;
 
-public class alertGetTextFunctionality {
+public class alertEnterTextFunctionality {
 
     WebDriver driver;
     //Method to set up the browser and open the website
@@ -27,29 +27,12 @@ public class alertGetTextFunctionality {
     public void alert_Functionality() {
        try {
             System.out.println("Starting the test case");
-            WebElement clickMeButton = driver.findElement(By.id("alertButton"));
+            WebElement clickMeButton = driver.findElement(By.id("promtButton"));
             clickMeButton.click();
-            driver.switchTo().alert();
-            String msg = driver.switchTo().alert().getText();
-            System.out.println("msg===="+msg);
-            Assert.assertEquals("You clicked a button", msg);
+            driver.switchTo().alert().sendKeys("TestUser");
             }catch(Exception e){}
         }
 
-
-
-    public void waitForPageLoad() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(new Function<WebDriver, Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                System.out.println("Current Window State       : "
-                        + String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState")));
-                return String
-                        .valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"))
-                        .equals("complete");
-            }
-        });
-    }
     @AfterClass
     public void tearDown() {
         driver.close();
