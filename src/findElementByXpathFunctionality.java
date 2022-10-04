@@ -23,7 +23,7 @@ public class findElementByXpathFunctionality {
         driver.manage().window().maximize();
     }
     @Test(priority = 1)
-    public void Send_Key() {
+    public void findElement_ByXpath_Functionality() {
         try {
             waitForPageLoad();
             System.out.println("Starting the test case");
