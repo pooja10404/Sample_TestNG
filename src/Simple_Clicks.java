@@ -16,7 +16,7 @@ public class Simple_Clicks {
     //Method to set up the browser and open the website
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C://Users//pooja//IdeaProjects//Sample_TestNG//tools//chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C://Users//Pooja//Demo_TestNG_Project//tools//chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         driver.manage().window().maximize();
@@ -24,8 +24,6 @@ public class Simple_Clicks {
     @Test(priority = 2)
     public void click() {
         try {
-            waitForPageLoad();
-            Thread.sleep(3000);
             //Get the Web Element corresponding to the field Email (Text field) and use sendkeys to pass the email to the field
             System.out.println("Starting the test case");
             driver.findElement(By.cssSelector("input[name='username']")).sendKeys("Admin");
@@ -40,19 +38,6 @@ public class Simple_Clicks {
         }catch(Exception e){}
     }
 
-
-    public void waitForPageLoad() {
-        WebDriverWait wait = new WebDriverWait(driver, 30L);
-        wait.until(new Function<WebDriver, Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                System.out.println("Current Window State       : "
-                        + String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState")));
-                return String
-                        .valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"))
-                        .equals("complete");
-            }
-        });
-    }
     @AfterClass
     public void tearDown() {
         driver.close();

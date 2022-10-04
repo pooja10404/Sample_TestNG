@@ -15,7 +15,7 @@ public class java_script_click {
     //Method to set up the browser and open the website
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C://Users//pooja//Downloads//chromedriver_win32 (6)//chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C://Users//Pooja//Demo_TestNG_Project//tools//chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         driver.manage().window().maximize();
@@ -23,7 +23,6 @@ public class java_script_click {
     @Test
     public void javascript_click() {
         try {
-            waitForPageLoad();
             //Get the Web Element corresponding to the field Email (Text field) and use sendkeys to pass the email to the field
             System.out.println("Starting the test case");
             driver.findElement(By.cssSelector("input[name='username']")).sendKeys("Admin");
@@ -41,18 +40,6 @@ public class java_script_click {
     }
 
 
-    public void waitForPageLoad() {
-        WebDriverWait wait = new WebDriverWait(driver, 3000);
-        wait.until(new Function<WebDriver, Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                System.out.println("Current Window State       : "
-                        + String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState")));
-                return String
-                        .valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"))
-                        .equals("complete");
-            }
-        });
-    }
     @AfterClass
     public void tearDown() {
         driver.close();
