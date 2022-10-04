@@ -10,8 +10,9 @@
             <class name="alertAcceptFunctionality"></class>
             <class name="alertDismissFunctionality"></class>
             <class name="alertEnterTextFunctionality"></class>
-            <class name="findElemenByidFunctionality"></class>
+            <class name="findElementByidFunctionality"></class>
             <class name="Simple_Clicks"></class>
+            <class name="java_script_click"></class>
         </classes>
     </test>
 </suite>
