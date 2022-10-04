@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.function.Function;
 
-public class Send_Keys_Functionality {
+public class sendKeysFunctionality {
 
     WebDriver driver;
     //Method to set up the browser and open the website
@@ -26,6 +26,7 @@ public class Send_Keys_Functionality {
     public void Send_Key() {
         try {
             waitForPageLoad();
+            Thread.sleep(3000);
             //Get the Web Element corresponding to the field Email (Text field) and use sendkeys to pass the email to the field
             System.out.println("Starting the test case");
             driver.findElement(By.cssSelector("input[name='username']")).sendKeys("Admin");
@@ -35,6 +36,7 @@ public class Send_Keys_Functionality {
             //Get the Web Element corresponding Login button and click it
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
             loginButton.click();
+//            Thread.sleep(3000);
         }catch(Exception e){}
     }
 
