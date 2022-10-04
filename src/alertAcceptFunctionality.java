@@ -1,7 +1,4 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -12,7 +9,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.function.Function;
 
-public class alertGetTextFunctionality {
+public class alertAcceptFunctionality {
 
     WebDriver driver;
     //Method to set up the browser and open the website
@@ -30,10 +27,9 @@ public class alertGetTextFunctionality {
             WebElement clickMeButton = driver.findElement(By.id("alertButton"));
             clickMeButton.click();
             driver.switchTo().alert();
-            String msg = driver.switchTo().alert().getText();
-            System.out.println("msg===="+msg);
-            Assert.assertEquals("You clicked a button", msg);
-            }catch(Exception e){}
+            driver.switchTo().alert().accept();
+            driver.switchTo().defaultContent();
+            }catch(UnhandledAlertException e){e.getAlert();}
         }
 
 
