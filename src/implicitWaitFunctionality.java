@@ -1,7 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -10,7 +9,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.time.Duration;
 
-public class ImplicitWaitFunctionality {
+public class implicitWaitFunctionality {
     WebDriver driver;
     //Method to set up the browser and open the website
     @BeforeClass
@@ -28,10 +27,8 @@ public class ImplicitWaitFunctionality {
     public void implicit_wait_Functionality() {
         try {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
             //This element will appear after 5 secs
             driver.findElement(By.id("visibleAfter")).click();
-
         }catch(UnhandledAlertException e){e.getAlert();}
     }
 
