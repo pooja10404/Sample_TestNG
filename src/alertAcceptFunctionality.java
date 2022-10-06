@@ -20,11 +20,13 @@ public class alertAcceptFunctionality {
 
         // Get the absolute path of file f
         String absolute = f.getAbsolutePath();
-        System.out.println("absolute=="+absolute);
         System.setProperty("webdriver.chrome.driver", absolute+"//chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://demoqa.com/alerts");
         driver.manage().window().maximize();
+
+
+
     }
     @Test(priority = 1)
     public void alert_Functionality() {
