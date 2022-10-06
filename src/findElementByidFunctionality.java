@@ -4,14 +4,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import java.io.File;
 
-public class findElemenByidFunctionality {
+public class findElementByidFunctionality {
 
     WebDriver driver;
     //Method to set up the browser and open the website
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C://Users//Pooja//Demo_TestNG_Project//tools//chromedriver.exe");
+        File f = new File("tools");
+
+        // Get the absolute path of file f
+        String absolute = f.getAbsolutePath();
+        System.out.println("absolute=="+absolute);
+        System.setProperty("webdriver.chrome.driver", absolute+"//chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("http://demo.guru99.com/test/ajax.html");
         driver.manage().window().maximize();

@@ -13,6 +13,10 @@
             <class name="findElementByidFunctionality"></class>
             <class name="Simple_Clicks"></class>
             <class name="java_script_click"></class>
+            <class name="findElements_ByTagName"></class>
+            <class name="findElements_ByName"></class>
+            <class name="findElemnets_Byid"></class>
+
         </classes>
     </test>
 </suite>

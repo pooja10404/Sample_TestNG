@@ -1,20 +1,15 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import java.io.File;
+import java.util.List;
 
-import java.time.Duration;
-import java.util.function.Function;
-
-public class alertEnterTextFunctionality {
-
+public class findElemnets_Byid {
     WebDriver driver;
     //Method to set up the browser and open the website
     @BeforeClass
@@ -26,22 +21,27 @@ public class alertEnterTextFunctionality {
         System.out.println("absolute=="+absolute);
         System.setProperty("webdriver.chrome.driver", absolute+"//chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://demoqa.com/alerts");
+        driver.get("https://demoqa.com/text-box/");
         driver.manage().window().maximize();
     }
-    @Test(priority = 1)
-    public void alert_Functionality() {
-       try {
-            System.out.println("Starting the test case");
-            WebElement clickMeButton = driver.findElement(By.id("promtButton"));
-            clickMeButton.click();
-            //Switching to Alert and send data to alert box.
+ @Test
+    public void findElemnets_Byid(String[] args) {
 
-            driver.switchTo().alert().sendKeys("TestUser");
-            }catch(Exception e){}
+        System.setProperty("webdriver.chrome.driver", "C:/testSelenium/chromedriver.exe");
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://demoqa.com/text-box/");
+        WebElement element = driver.findElement(By.id("submit"));
+
+
+        if(element != null) {
+            System.out.println("Element found by ID");
         }
+    }
 
-    @AfterClass
+
+ @AfterClass
     public void tearDown() {
         driver.close();
         driver.quit();
