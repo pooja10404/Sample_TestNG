@@ -27,7 +27,7 @@ public class findElementByPartialLinkTextFunctionality {
         driver.manage().window().maximize();
     }
     @Test(priority = 1)
-    public void findElement_By_LinkText_Functionality() {
+    public void findElement_By_PartialLinkText_Functionality() {
         try {
             waitForPageLoad();
             System.out.println("Starting the test case");
@@ -40,9 +40,12 @@ public class findElementByPartialLinkTextFunctionality {
             // identify element with cssSelector
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
             loginButton.click();
-            // identify element with linkText
-            WebElement addEmployeeButton = driver.findElement(By.partialLinkText("Reports"));
-            addEmployeeButton.click();
+            // identify element with partialLinkText
+            WebElement addEmployee = driver.findElement(By.partialLinkText("Reports"));
+            addEmployee.click();
+            // identify element with partialLinkText
+            WebElement employeeList = driver.findElement(By.partialLinkText("Employee"));
+            employeeList.click();
 
 
         }catch(Exception e){}
