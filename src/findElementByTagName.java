@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
-public class findElementByName {
+public class findElementByTagName {
     WebDriver driver;
     //Method to set up the browser and open the website
     @BeforeClass
@@ -18,7 +18,7 @@ public class findElementByName {
         driver.manage().window().maximize();
     }
     @Test(priority = 2)
-    public void find_Element_ByName() {
+    public void find_Element_ByTagName() {
         try {
             //Get the Web Element corresponding to the field Email (Text field) and use sendkeys to pass the email to the field
             System.out.println("Starting the test case");
@@ -27,8 +27,8 @@ public class findElementByName {
             // identify element with find element by name
             WebElement passWordField = driver.findElement(By.name("password"));
             passWordField.sendKeys("admin123");
-            //Get the Web Element corresponding Login button and click it
-            WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+            // identify element with find element by tagName and click it
+            WebElement loginButton = driver.findElement(By.tagName("button"));
             loginButton.click();
         }catch(Exception e){}
     }
