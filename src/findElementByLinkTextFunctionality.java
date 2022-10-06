@@ -32,16 +32,16 @@ public class findElementByLinkTextFunctionality {
         try {
             waitForPageLoad();
             System.out.println("Starting the test case");
-            // identify element with xpath
-            WebElement userNameField = driver.findElement(By.xpath("//input[@name='username']"));
+            // identify element with cssSelector
+            WebElement userNameField = driver.findElement(By.cssSelector("input[name='username']"));
             userNameField.sendKeys("Admin");
-            // identify element with xpath
-            WebElement passWordField = driver.findElement(By.xpath("//input[@name='password']"));
+            // identify element with cssSelector
+            WebElement passWordField = driver.findElement(By.cssSelector("input[name='password']"));
             passWordField.sendKeys("admin123");
-            // identify element with xpath
+            // identify element with cssSelector
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
             loginButton.click();
-            // identify element linkText
+            // identify element with linkText
             WebElement addEmployeeButton = driver.findElement(By.linkText("Add Employee"));
             addEmployeeButton.click();
 
