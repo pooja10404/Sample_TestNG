@@ -18,8 +18,9 @@ public class findElementByTagName {
         driver.manage().window().maximize();
     }
     @Test(priority = 2)
-    public void find_Element_ByName() {
+    public void find_Element_ByTagName() {
         try {
+
             //Get the Web Element corresponding to the field Email (Text field) and use sendkeys to pass the email to the field
             System.out.println("Starting the test case");
             // identify element with find element by name
@@ -27,8 +28,8 @@ public class findElementByTagName {
             // identify element with find element by name
             WebElement passWordField = driver.findElement(By.name("password"));
             passWordField.sendKeys("admin123");
-            //Get the Web Element corresponding Login button and click it
-            WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+            // identify element with find element by tag name and click it
+            WebElement loginButton = driver.findElement(By.tagName("button"));
             loginButton.click();
         }catch(Exception e){}
     }
