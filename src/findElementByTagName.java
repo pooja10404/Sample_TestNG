@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
-public class findElementByName {
+public class findElementByTagName {
     WebDriver driver;
     //Method to set up the browser and open the website
     @BeforeClass
