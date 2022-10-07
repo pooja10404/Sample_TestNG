@@ -15,6 +15,7 @@
             <class name="java_script_click"></class>
             <class name="dropDownVisibleTextFunctionality"></class>
             <class name="dropDownByValueFunctionality"></class>
+            <class name="actionElementThroughReleaseFunctionality"></class>
         </classes>
     </test>
 </suite>
