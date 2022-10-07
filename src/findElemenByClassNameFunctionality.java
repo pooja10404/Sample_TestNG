@@ -27,10 +27,11 @@ public class findElemenByClassNameFunctionality {
     @Test(priority = 1)
     public void findElement_By_Class_Name_Functionality() {
         try {
-
+            Thread.sleep(2000);
             // identify element with class
             WebElement search = driver.findElement(By.className("input"));
             search.sendKeys("javaScript");
+            Thread.sleep(2000);
             String str = search.getAttribute("value");
             System.out.println("Attribute value is : " + str);
         }catch(Exception e){}

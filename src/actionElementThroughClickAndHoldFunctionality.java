@@ -3,11 +3,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class actionElementThroughClickAndHoldFunctionality {
     WebDriver driver;
@@ -29,7 +33,9 @@ public class actionElementThroughClickAndHoldFunctionality {
         WebElement tapandHoldBox = driver.findElement(By.xpath("(//div[contains(text(),'taphold click')])[1]"));
         Actions actions = new Actions(driver);
         //this operation perform click and hold on(tapandHoldBox)
+        Thread.sleep(2000);
         actions.clickAndHold(tapandHoldBox).perform();
+        Thread.sleep(2000);
     }
     @AfterClass
      public void tearDown()

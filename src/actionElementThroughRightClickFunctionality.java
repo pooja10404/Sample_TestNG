@@ -27,13 +27,16 @@ public class actionElementThroughRightClickFunctionality {
     @Test (priority = 1)
     // we perform rightclick in action element
     public void actionElementThroughRightClickFunctionality() throws InterruptedException {
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[name='username']")).sendKeys("Admin");
         driver.findElement(By.cssSelector("input[name='password']")).sendKeys("admin123");
         driver.findElement(By.cssSelector("button[type='submit']")).click();
         WebElement leaveOption = driver.findElement(By.xpath("(//span[contains(normalize-space(),'Leave')])[1]"));
         Actions actions = new Actions(driver);
+        Thread.sleep(2000);
         //this operation perform Right click on(leaveOption)
         actions.contextClick(leaveOption).perform();
+        Thread.sleep(2000);
     }
     @AfterClass
     public void tearDown() {

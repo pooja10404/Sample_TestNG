@@ -25,8 +25,10 @@ public class dropDownByValueFunctionality {
     }
     @Test(priority = 1)
     public void dropDownByValueFunctionality() throws InterruptedException {
+        Thread.sleep(2000);
         Select dropdown = new Select(driver.findElement(By.name("country")));// this is select class
         // select dropdown by value
+        Thread.sleep(2000);
         dropdown.selectByValue("ANDORRA");
     }
     @AfterClass

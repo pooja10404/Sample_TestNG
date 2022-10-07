@@ -30,13 +30,16 @@ public class findElementByName {
             //Get the Web Element corresponding to the field Email (Text field) and use sendkeys to pass the email to the field
             System.out.println("Starting the test case");
             // identify element with find element by name
+            Thread.sleep(2000);
             driver.findElement(By.name("username")).sendKeys("Admin");
             // identify element with find element by name
             WebElement passWordField = driver.findElement(By.name("password"));
             passWordField.sendKeys("admin123");
             //Get the Web Element corresponding Login button and click it
+            Thread.sleep(2000);
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
             loginButton.click();
+            Thread.sleep(2000);
         }catch(Exception e){}
     }
 

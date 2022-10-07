@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
@@ -25,9 +27,12 @@ public class dropDownByIndexFunctionality {
     }
     @Test(priority = 1)
     public void dropDownByIndexFunctionality() throws InterruptedException {
+        Thread.sleep(2000);
         Select dropdown = new Select(driver.findElement(By.name("country")));// this is select class
         // select dropdown by Index
+        Thread.sleep(2000);
         dropdown.selectByIndex(5);
+        Thread.sleep(2000);
     }
     @AfterClass
     public void tearDown() {

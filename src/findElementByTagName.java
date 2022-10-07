@@ -29,7 +29,9 @@ public class findElementByTagName {
             passWordField.sendKeys("admin123");
             //Get the Web Element corresponding Login button and click it
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+            Thread.sleep(2000);
             loginButton.click();
+            Thread.sleep(2000);
         }catch(Exception e){}
     }
 

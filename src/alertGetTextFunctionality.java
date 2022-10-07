@@ -32,12 +32,14 @@ public class alertGetTextFunctionality {
     @Test(priority = 1)
     public void alert_Functionality() {
        try {
+            Thread.sleep(2000);
             System.out.println("Starting the test case");
             WebElement clickMeButton = driver.findElement(By.id("alertButton"));
             clickMeButton.click();
-           // Switching to Alert and capture the alert message.
+            Thread.sleep(2000);
+            //Switching to Alert and capture the alert message.
             String msg = driver.switchTo().alert().getText();
-            System.out.println("msg===="+msg);
+            Thread.sleep(2000);
             Assert.assertEquals("You clicked a button", msg);
             }catch(Exception e){}
         }

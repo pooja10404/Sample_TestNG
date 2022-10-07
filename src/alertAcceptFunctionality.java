@@ -31,17 +31,24 @@ public class alertAcceptFunctionality {
     @Test(priority = 1)
     public void alert_Functionality() {
        try {
-            System.out.println("Starting the test case");
+
             WebElement clickMeButton = driver.findElement(By.id("alertButton"));
+           Thread.sleep(2000);
             clickMeButton.click();
+           Thread.sleep(2000);
            // Switching to Alert
             driver.switchTo().alert();
+           Thread.sleep(2000);
            // Accepting alert
             driver.switchTo().alert().accept();
+           Thread.sleep(2000);
            // Switching to default window
             driver.switchTo().defaultContent();
-            }catch(UnhandledAlertException e){e.getAlert();}
-        }
+           Thread.sleep(2000);
+            }catch(UnhandledAlertException e){e.getAlert();} catch (InterruptedException e) {
+           e.printStackTrace();
+       }
+    }
 
     @AfterClass
     public void tearDown() {

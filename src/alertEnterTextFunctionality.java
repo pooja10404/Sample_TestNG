@@ -33,6 +33,7 @@ public class alertEnterTextFunctionality {
     public void alert_Functionality() {
        try {
             System.out.println("Starting the test case");
+           Thread.sleep(2000);
             WebElement clickMeButton = driver.findElement(By.id("promtButton"));
             clickMeButton.click();
             //Switching to Alert and send data to alert box.
@@ -41,7 +42,8 @@ public class alertEnterTextFunctionality {
         }
 
     @AfterClass
-    public void tearDown() {
+    public void tearDown()
+    {
         driver.close();
         driver.quit();
         driver=null;
