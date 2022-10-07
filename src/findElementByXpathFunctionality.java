@@ -32,6 +32,7 @@ public class findElementByXpathFunctionality {
     public void findElement_ByXpath_Functionality() {
         try {
             waitForPageLoad();
+            Thread.sleep(2000);
             System.out.println("Starting the test case");
             // identify element with xpath
             driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");
@@ -40,7 +41,9 @@ public class findElementByXpathFunctionality {
             passWordField.sendKeys("admin123");
             // identify element with xpath
             WebElement loginButton = driver.findElement(By.cssSelector("//button[@type='submit']"));
+            Thread.sleep(2000);
             loginButton.click();
+            Thread.sleep(2000);
         }catch(Exception e){}
     }
 

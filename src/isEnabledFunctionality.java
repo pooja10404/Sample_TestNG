@@ -25,6 +25,7 @@ public class isEnabledFunctionality {
     @Test(priority = 1)
     public void isEnabled_Functionality() {
         try {
+            Thread.sleep(2000);
             System.out.println("Starting the test case");
             // Store the current window handle
             String winHandleBefore = driver.getWindowHandle();
@@ -32,14 +33,17 @@ public class isEnabledFunctionality {
             WebElement newBrowserTab = driver.findElement(By.cssSelector("button[onclick='newBrwTab()']"));
             newBrowserTab.click();
             // Switch to new window opened
-            for(String winHandle : driver.getWindowHandles()){
-                driver.switchTo().window(winHandle);
+            if (newBrowserTab.isEnabled()){
+                // Switch to new window opened
+                for(String winHandle : driver.getWindowHandles()){
+                    driver.switchTo().window(winHandle);
+                }
+                // identify element with cssSelector and Perform the actions on new window
+                WebElement courseFeatures= driver.findElement(By.cssSelector("li[id='menu-item-6044']>a "));
+                courseFeatures.click();
+                // Switch back to original browser (first window)
+                driver.switchTo().window(winHandleBefore);
             }
-            // identify element with cssSelector and Perform the actions on new window
-            WebElement courseFeatures= driver.findElement(By.cssSelector("li[id='menu-item-6044']>a "));
-            courseFeatures.click();
-            // Switch back to original browser (first window)
-            driver.switchTo().window(winHandleBefore);
         }catch(Exception e){}
     }
 

@@ -33,17 +33,16 @@ public class windowHandleFunctionality {
             WebElement newBrowserTab = driver.findElement(By.cssSelector("button[onclick='newBrwTab()']"));
             newBrowserTab.click();
             // check whether element is enabled or not
-            if (newBrowserTab.isEnabled()){
-                // Switch to new window opened
-                for(String winHandle : driver.getWindowHandles()){
-                    driver.switchTo().window(winHandle);
-                }
-                // identify element with cssSelector and Perform the actions on new window
-                WebElement courseFeatures= driver.findElement(By.cssSelector("li[id='menu-item-6044']>a "));
-                courseFeatures.click();
-                // Switch back to original browser (first window)
-                driver.switchTo().window(winHandleBefore);
+            for(String winHandle : driver.getWindowHandles()){
+                driver.switchTo().window(winHandle);
             }
+            // identify element with cssSelector and Perform the actions on new window
+            WebElement courseFeatures= driver.findElement(By.cssSelector("li[id='menu-item-6044']>a "));
+            courseFeatures.click();
+            Thread.sleep(2000);
+            // Switch back to original browser (first window)
+            driver.switchTo().window(winHandleBefore);
+            Thread.sleep(2000);
 
         }catch(Exception e){}
     }

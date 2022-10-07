@@ -27,17 +27,20 @@ public class findElementsByClassName {
         driver.manage().window().maximize();
     }
     @Test(priority = 1)
-    public void findElements_ByTagName() {
+    public void findElements_ByClassName() {
         try {
             //Get the Web Element corresponding to the field tagname Input
             System.out.println("Starting the test case");
+            Thread.sleep(2000);
             List<WebElement> allInputElements = driver.findElements(By.className("button"));
             if(allInputElements.size() != 0)
             {
+                Thread.sleep(2000);
                 System.out.println(allInputElements.size() + " Elements found by Class Name as input \n");
 
                 for(WebElement inputElement : allInputElements)
                 {
+                    Thread.sleep(2000);
                     System.out.println(inputElement.getAttribute("placeholder"));
                 }
             }

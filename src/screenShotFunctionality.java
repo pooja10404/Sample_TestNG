@@ -7,7 +7,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.apache.commons.io.FileUtils;
-
 import java.io.File;
 
 public class screenShotFunctionality {
@@ -30,12 +29,13 @@ public class screenShotFunctionality {
     public void screenShotFunctionality() {
         try {
             //Call take screenshot function
-            Thread.sleep(500);
+            Thread.sleep(2000);
             this.takeSnapShot(driver, absolute+"//test.png") ;
         }catch(Exception e){}
     }
     public static void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception{
 
+        Thread.sleep(2000);
         //Convert web driver object to TakeScreenshot
         TakesScreenshot scrShot =((TakesScreenshot)webdriver);
         //Call getScreenshotAs method to create image file
