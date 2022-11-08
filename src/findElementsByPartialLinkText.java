@@ -31,7 +31,9 @@ public class findElementsByPartialLinkText {
     public void findElements_ByTagName() {
         try {
             //Get the Web Element corresponding to the field tagname Input
+            Thread.sleep(2000);
             System.out.println("Starting the test case");
+            Thread.sleep(2000);
             List<WebElement> allInputElements = driver.findElements(By.partialLinkText("Address"));
             if(allInputElements.size() != 0)
             {

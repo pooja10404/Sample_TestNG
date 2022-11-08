@@ -29,6 +29,7 @@ public class java_script_click {
     @Test
     public void javascript_click() {
         try {
+            Thread.sleep(2000);
             //Get the Web Element corresponding to the field Email (Text field) and use sendkeys to pass the email to the field
             System.out.println("Starting the test case");
             driver.findElement(By.cssSelector("input[name='username']")).sendKeys("Admin");
@@ -38,10 +39,13 @@ public class java_script_click {
             //Get the Web Element corresponding Login button and click it
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
             loginButton.click();
+            Thread.sleep(2000);
             //JAVAscript CLick
             WebElement menu_item3=driver.findElement(By.linkText("Leave"));
             JavascriptExecutor js = (JavascriptExecutor) driver;
+            Thread.sleep(2000);
             js.executeScript("arguments[0].click();", menu_item3);
+            Thread.sleep(2000);
         }catch(Exception e){}
     }
 

@@ -40,10 +40,13 @@ public class getTextFunctionality {
             passWordField.sendKeys("admin123");
             // identify element with cssSelector
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+            Thread.sleep(2000);
             loginButton.click();
+            Thread.sleep(2000);
             // identify element with linkText
             WebElement addEmployeeButton = driver.findElement(By.linkText("Add Employee"));
             addEmployeeButton.click();
+            Thread.sleep(2000);
             // identify element with cssSelector
             WebElement expectedTitle = driver.findElement(By.cssSelector("h6.orangehrm-main-title"));
             // get text of a element in variable

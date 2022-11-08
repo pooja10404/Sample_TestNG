@@ -42,9 +42,11 @@ public class getAttributeFunctionality {
             // identify element with cssSelector
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
             loginButton.click();
+            Thread.sleep(2000);
             // identify element with linkText
             WebElement addEmployeeButton = driver.findElement(By.linkText("Add Employee"));
             addEmployeeButton.click();
+            Thread.sleep(2000);
             // identify element with cssSelector
             WebElement expectedTitle = driver.findElement(By.cssSelector("input.orangehrm-firstname"));
             // get text of a element in variable

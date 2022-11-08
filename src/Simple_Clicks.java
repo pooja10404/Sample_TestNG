@@ -32,6 +32,7 @@ public class Simple_Clicks {
         try {
             //Get the Web Element corresponding to the field Email (Text field) and use sendkeys to pass the email to the field
             System.out.println("Starting the test case");
+            Thread.sleep(2000);
             driver.findElement(By.cssSelector("input[name='username']")).sendKeys("Admin");
             //Get the Web Element corresponding to the Password Field
             WebElement passWordField = driver.findElement(By.cssSelector("input[name='password']"));
@@ -39,8 +40,11 @@ public class Simple_Clicks {
             //Get the Web Element corresponding Login button and click it
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
             loginButton.click();
+            Thread.sleep(2000);
             WebElement menu_item= driver.findElement(By.linkText("Admin"));
+            Thread.sleep(2000);
             menu_item.click();
+            Thread.sleep(2000);
         }catch(Exception e){}
     }
 

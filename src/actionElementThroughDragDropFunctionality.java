@@ -25,11 +25,14 @@ public class actionElementThroughDragDropFunctionality {
 
     @Test(priority = 0)
     public void actionElementThroughDragDropFunctionality() throws InterruptedException {
+        Thread.sleep(2000);
         WebElement madridOption = driver.findElement(By.xpath("(//div[contains(@id,'dropContent')]/..//div[contains(text(),'Copenhagen')])[2]"));
         WebElement italyOption = driver.findElement(By.xpath("//div[contains(text(),'Italy')]"));
         Actions actions = new Actions(driver);
         //this operation perform dragAnddrop on(madridOption) and(italyOption)
+        Thread.sleep(2000);
         actions.dragAndDrop(madridOption, italyOption).perform();
+        Thread.sleep(2000);
     }
     @AfterClass
     public void tearDown() {

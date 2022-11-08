@@ -30,9 +30,12 @@ public class findElementsById {
     @Test(priority = 1)
     public void findElements_ByTagName() {
         try {
+            Thread.sleep(2000);
             //Get the Web Element corresponding to the field tagname Input
             System.out.println("Starting the test case");
+            Thread.sleep(2000);
             List<WebElement> allInputElements = driver.findElements(By.id("submit"));
+            Thread.sleep(2000);
             if(allInputElements.size() != 0)
             {
                 System.out.println(allInputElements.size() + " Elements found by id as input \n");

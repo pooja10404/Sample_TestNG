@@ -32,15 +32,19 @@ public class sendKeysFunctionality {
     public void Send_Key() {
         try {
             waitForPageLoad();
+            Thread.sleep(2000);
             //Get the Web Element corresponding to the field Email (Text field) and use sendkeys to pass the email to the field
             System.out.println("Starting the test case");
+            Thread.sleep(2000);
             driver.findElement(By.cssSelector("input[name='username']")).sendKeys("Admin");
             //Get the Web Element corresponding to the Password Field
             WebElement passWordField = driver.findElement(By.cssSelector("input[name='password']"));
             passWordField.sendKeys("admin123");
             //Get the Web Element corresponding Login button and click it
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+            Thread.sleep(2000);
             loginButton.click();
+            Thread.sleep(2000);
         }catch(Exception e){}
     }
 

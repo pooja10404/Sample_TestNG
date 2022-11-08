@@ -28,10 +28,12 @@ public class getSizeFunctionality {
     @Test(priority = 1)
     public void getSize_Functionality() {
         try {
+            Thread.sleep(2000);
             System.out.println("Starting the test case");
             // identify element with cssSelector and Perform the click operation that opens new window
             WebElement firstName = driver.findElement(By.cssSelector("input[id=firstName]"));
             Dimension dimension = firstName.getSize();
+            Thread.sleep(2000);
             // verify excepted and actual text
             Assert.assertEquals(dimension.getHeight(), 37);
             // verify excepted and actual text

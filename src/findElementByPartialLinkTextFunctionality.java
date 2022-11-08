@@ -30,6 +30,7 @@ public class findElementByPartialLinkTextFunctionality {
     public void findElement_By_PartialLinkText_Functionality() {
         try {
             waitForPageLoad();
+            Thread.sleep(2000);
             System.out.println("Starting the test case");
             // identify element with cssSelector
             WebElement userNameField = driver.findElement(By.cssSelector("input[name='username']"));
@@ -45,7 +46,9 @@ public class findElementByPartialLinkTextFunctionality {
             addEmployee.click();
             // identify element with partialLinkText
             WebElement employeeList = driver.findElement(By.partialLinkText("Employee"));
+            Thread.sleep(2000);
             employeeList.click();
+            Thread.sleep(2000);
 
 
         }catch(Exception e){}

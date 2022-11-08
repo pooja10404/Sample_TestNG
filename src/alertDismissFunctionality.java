@@ -31,12 +31,16 @@ public class alertDismissFunctionality {
             System.out.println("Starting the test case");
             WebElement clickMeButton = driver.findElement(By.id("confirmButton"));
             clickMeButton.click();
+           Thread.sleep(2000);
            // Switching to Alert
             driver.switchTo().alert();
            // To click on the ‘Cancel’ button of the alert. (Dismiss the alert)
             driver.switchTo().alert().dismiss();
-            }catch(UnhandledAlertException e){e.getAlert();}
-        }
+           Thread.sleep(2000);
+            }catch(UnhandledAlertException e){e.getAlert();} catch (InterruptedException e) {
+           e.printStackTrace();
+       }
+    }
 
     @AfterClass
     public void tearDown() {

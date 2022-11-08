@@ -31,6 +31,7 @@ public class findElementByLinkTextFunctionality {
     public void findElement_By_LinkText_Functionality() {
         try {
             waitForPageLoad();
+            Thread.sleep(2000);
             System.out.println("Starting the test case");
             // identify element with cssSelector
             WebElement userNameField = driver.findElement(By.cssSelector("input[name='username']"));
@@ -40,13 +41,12 @@ public class findElementByLinkTextFunctionality {
             passWordField.sendKeys("admin123");
             // identify element with cssSelector
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+            Thread.sleep(2000);
             loginButton.click();
             // identify element with linkText
             WebElement addEmployeeButton = driver.findElement(By.linkText("Add Employee"));
             addEmployeeButton.click();
-
-
-
+            Thread.sleep(2000);
         }catch(Exception e){}
     }
     public void waitForPageLoad() {
